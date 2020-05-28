@@ -7,6 +7,31 @@
         <OnSwipe
             app:dragDirection="dragDown"
             app:touchAnchorSide="bottom" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:keyPositionType="parentRelative"
+                app:percentX="0.25"
+                app:framePosition="50"
+                app:motionTarget="@id/text"/>
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:keyPositionType="parentRelative"
+                app:percentX="0.25"
+                app:framePosition="50"
+                app:motionTarget="@id/image"/>
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="2"
+                android:scaleY="2"
+                android:rotation="-45"
+                app:framePosition="50"
+                app:motionTarget="@id/image" />
+        </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
@@ -24,6 +49,13 @@
             <CustomAttribute
                 app:attributeName="backgroundColor"
                 app:customColorValue="@android:color/black" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/image">
+            <CustomAttribute
+                app:attributeName="crossfade"
+                app:customFloatValue="0" />
         </Constraint>
 
     </ConstraintSet>
@@ -45,6 +77,13 @@
             <CustomAttribute
                 app:attributeName="backgroundColor"
                 app:customColorValue="@android:color/white" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/image">
+            <CustomAttribute
+                app:attributeName="crossfade"
+                app:customFloatValue="1" />
         </Constraint>
 
     </ConstraintSet>
