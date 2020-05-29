@@ -43,10 +43,14 @@
     </Transition>
 
 
-    <!--    constrainti napisani ovde overriduju constrainte napisane u MotionLayout-u  -->
+    <!-- Constrainti napisani ovde overriduju constrainte napisane u MotionLayout-u,
+         View's kojima se menjaju constrainti ("text") moraju imati definisane constrainte u oba constraint seta ("start" i "end"),
+         View's kojima se ne menjaju constrainti ("image")  ne moraju imati definisane constraintove van MotionLayout-a, ako su constraintovani za views koji se animiraju, animirace se zajedno sa njima,
+         Menjanje boja i ostalih atributa ide preko CustomAttribute propertija,
+         Crossfade zamena izmedju dve slicice definisane u MotionLayout-u -->
+
     <ConstraintSet android:id="@+id/start">
 
-        <!--     view's kojima se menjaju constrainti moraju imati definisane constrainte u oba constraint seta ("start" i "end")   -->
         <Constraint
             android:id="@id/text"
             android:layout_width="wrap_content"
@@ -54,30 +58,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <!--     menjanje boja i ostalih atributa ide preko CustomAttribute propertija -->
             <CustomAttribute
                 app:attributeName="textColor"
                 app:customColorValue="@android:color/white" />
-
             <CustomAttribute
                 app:attributeName="backgroundColor"
                 app:customColorValue="@android:color/black" />
         </Constraint>
 
-        <!--    view's kojima se ne menjaju constrainti animacijom ne moraju imati definisane constraintove van MotionLayout-a,
-                ako su constraintovani za views koji se animiraju, animirace se zajedno sa njima    -->
         <Constraint android:id="@id/image">
-
-            <!--    crossfade zamena izmedju dve slicice definisane u MotionLayout-u -->
             <CustomAttribute
                 app:attributeName="crossfade"
                 app:customFloatValue="0" />
-
         </Constraint>
+
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
+
         <Constraint
             android:id="@id/text"
             android:layout_width="wrap_content"
@@ -87,11 +85,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.9">
-
             <CustomAttribute
                 app:attributeName="textColor"
                 app:customColorValue="@android:color/black" />
-
             <CustomAttribute
                 app:attributeName="backgroundColor"
                 app:customColorValue="@android:color/white" />
@@ -104,4 +100,5 @@
         </Constraint>
 
     </ConstraintSet>
+
 </MotionScene>
