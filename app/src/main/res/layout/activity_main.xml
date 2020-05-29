@@ -21,7 +21,7 @@
         android:layout_height="50dp"
         android:src="@drawable/ic_launcher_foreground"
         app:altSrc="@drawable/ic_launcher_background"
-        app:layout_constraintBottom_toTopOf="@+id/text"
+        app:layout_constraintTop_toBottomOf="@+id/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
