@@ -20,19 +20,13 @@
                 app:keyPositionType="parentRelative"
                 app:motionTarget="@id/text"
                 app:percentX="0.25" />
-        </KeyFrameSet>
 
         <!--     kad je animacija na 50% postavi "image" na 75% od parenta -->
-        <KeyFrameSet>
             <KeyPosition
                 app:framePosition="50"
                 app:keyPositionType="parentRelative"
                 app:motionTarget="@id/image"
                 app:percentX="0.75" />
-        </KeyFrameSet>
-
-        <!--     kad je animacija na 50% rotiraj image za -45 stepeni i skaliraj na 2   -->
-        <KeyFrameSet>
             <KeyAttribute
                 android:rotation="-45"
                 android:scaleX="2"
@@ -98,7 +92,5 @@
                 app:attributeName="crossfade"
                 app:customFloatValue="1" />
         </Constraint>
-
     </ConstraintSet>
-
 </MotionScene>
